@@ -3,6 +3,14 @@ var mongoose = require(
 var bcrypt = require('bcrypt');
 
 //Define what a use looks like in the database
+var addressSchema = new mongoose.Schema({
+	name: String,
+	street: String,
+	city: String,
+	state: String,
+	zipcode: Number
+});
+
 var userSchema = new mongoose.Schema({
 	name: String,
 	email: {
@@ -13,7 +21,8 @@ var userSchema = new mongoose.Schema({
 	password: {
 		type: String,
 		required: true,
-	}
+	},
+	savedContacts: [addressSchema]
 });
 
 // Make a function that checks whether the password is correct
