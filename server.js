@@ -8,13 +8,16 @@ var isLoggedIn = require('./middleware/isLoggedIn');
 var mongoose = require('mongoose');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
+const indeRoute = require('./routes/index');
+const profileRoute = require('./routes/profile');
+
 
 
 //App Variable
 var app = express();
 
 // Connect to the database
-mongoose.connect('mongodb://localhost/authboiler');
+mongoose.connect('mongodb://localhost/digitalNomad');
 
 // Set and use statements
 app.set('view engine', 'ejs');
@@ -47,7 +50,8 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 // Include any routes from controllers
-app.use('/auth', require('./controllers/auth'));
+app.use('/auth', require('./routes/auth'));
+// app.use('/user', require('./routes/user'))
 
 // Listen
 
