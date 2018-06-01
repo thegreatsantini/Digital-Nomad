@@ -1,0 +1,27 @@
+h1 {
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	font-size: 80px;
+	font-weight: bold;
+}
+h3 {
+	text-align: center;
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+	font-size: 30px;
+}
+#homebody {
+	background-image: url('/images/pictures.jpeg');
+	background-size: 100%;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+.navbar {
+	bottom: 1!important;
+	width: 100%;
+	position: fixed;
+	overflow: hidden;
+}
