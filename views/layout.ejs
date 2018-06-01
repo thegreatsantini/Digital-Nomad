@@ -19,21 +19,6 @@
 
 	<% include partials/navbar %> 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<hr>
-		<div class = "row">
-			<div class = "col-12">
-				<a href = "/" class = "btn btn-info">Home</a>
-				<% if(!currentUser) {%>
-				<a href = "/auth/login" class = "btn btn-primary">Login</a>
-				<a href = "/auth/signup" class = "btn btn-success">Sign Up</a>
-				<% } else { %>
-				<a href = "/auth/logout" class = "btn btn-warning"><%=currentUser.name%>, Do you wanna log out?</a>
-				<a href = "/profile" class = "btn btn-danger">Profile</a>
-				<% } %>
-			</div>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="/scripts/main.js"></script>

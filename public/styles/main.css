@@ -20,7 +20,7 @@ h3 {
 	background-size: cover;
 }
 .navbar {
-	bottom: 1!important;
+	bottom: 0!important;
 	width: 100%;
 	position: fixed;
 	overflow: hidden;
