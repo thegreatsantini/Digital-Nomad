@@ -13,6 +13,11 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
     res.render('profile', { currentUser: res.locals.currentUser });
 });
 
+
+profileRoute.get('/createcard', isLoggedIn, function(req, res){
+    res.render('createcard')
+})
+
 profileRoute.post('/', function (req, res) {
 
     let newBookmark = {
@@ -36,13 +41,6 @@ profileRoute.post('/', function (req, res) {
 //////////////////////////////////////////////////////
 
 profileRoute.delete('/', function (req, res) {
-    let bookMarkToRemove = {
-        title: req.body.title,
-        publisher: req.body.publisher,
-        image: req.body.image,
-        link: req.body.link
-    };
-
     db.findById(res.locals.currentUser.id, (err, user) => {
 
         let saved_id;

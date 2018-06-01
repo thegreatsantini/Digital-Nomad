@@ -19,9 +19,47 @@ h3 {
 	background-attachment: fixed;
 	background-size: cover;
 }
-.navbar {
-	bottom: 1!important;
+.nav-center {
+	text-align: center;
 	width: 100%;
 	position: fixed;
 	overflow: hidden;
+	float: left;
+	bottom: 200px;
+}
+.footer {
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	height: 30px;
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	background-color: #CBBEB5;
+	color: white;
+}
+#logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
+	background-color: #CBBEB5!important;
+	color: white;
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+}
+#loginHeader, #signupHeader, #welcomeback {
+	font-size: 50px;
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	font-weight: bold;
+}
+#createcard, #addressbook {
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	padding: 10px;
+	display: block;
+	background-color: #b0e0e6;
+	color: white!important;
+	border-radius: 5px;
+
 }
