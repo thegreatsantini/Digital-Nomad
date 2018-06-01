@@ -59,7 +59,6 @@ profileRoute.post('/', function (req, res) {
     });
     res.send('success')
 })
-//////////////////////////////////////////////////////
 
 profileRoute.delete('/', function (req, res) {
     db.findById(res.locals.currentUser.id, (err, user) => {
