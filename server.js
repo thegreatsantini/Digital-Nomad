@@ -53,6 +53,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 
 // Include any routes from controllers
 app.use('/auth', require('./routes/auth'));
+app.use('/profile', require('./routes/profile'));
 // app.use('/user', require('./routes/user'))
 
 // Listen

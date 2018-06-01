@@ -13,8 +13,13 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
     res.render('profile');
 });
 
+
 profileRoute.get('/addressbook', function (req, res) {
     res.render('addressBook')
+
+
+profileRoute.get('/createcard', isLoggedIn, function(req, res){
+    res.render('createcard')
 })
 
 profileRoute.post('/', function (req, res) {
@@ -40,13 +45,6 @@ profileRoute.post('/', function (req, res) {
 //////////////////////////////////////////////////////
 
 profileRoute.delete('/', function (req, res) {
-    let bookMarkToRemove = {
-        title: req.body.title,
-        publisher: req.body.publisher,
-        image: req.body.image,
-        link: req.body.link
-    };
-
     db.findById(res.locals.currentUser.id, (err, user) => {
 
         let saved_id;
