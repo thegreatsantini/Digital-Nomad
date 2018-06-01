@@ -28,6 +28,7 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static('public'));
 
 // Just a convenience, but makes life easier...
 
@@ -36,6 +37,7 @@ app.use(function(req, res, next) {
 	res.locals.alerts = req.flash();
 	next();
 });
+
 
 // Top-level Routes
 app.get('/', function(req, res){
