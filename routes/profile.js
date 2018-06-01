@@ -16,7 +16,7 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
 
 profileRoute.get('/addressbook', function (req, res) {
     res.render('addressBook')
-
+});
 
 profileRoute.get('/createcard', isLoggedIn, function(req, res){
     res.render('createcard')
