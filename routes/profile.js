@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 
 const db = require('../models/user');
+const contacts = require('../models/user')
 // const SavedRecipe = require('../models/savedRecipes')
 
 profileRoute.get('/', isLoggedIn, function (req, res) {
@@ -13,10 +14,26 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
     res.render('profile');
 });
 
-
 profileRoute.get('/addressbook', function (req, res) {
     res.render('addressBook')
 });
+
+profileRoute.post('/addressbook', function(req, res, next){
+    
+
+    db.findById(res.locals.currentUser.id, (err, success) => {
+        SavedRecipe.create(req.body, (error, recipe) => {
+            if (error) {
+                res.status(500).send()
+            }
+            success.saved.push(recipe);
+            success.save();
+        })
+    });
+    res.send('success')
+
+})
+
 
 profileRoute.get('/createcard', isLoggedIn, function(req, res){
     res.render('createcard')

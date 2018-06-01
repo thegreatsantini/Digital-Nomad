@@ -1,15 +1,7 @@
 var mongoose = require(
 	'mongoose');
 var bcrypt = require('bcrypt');
-
-//Define what a use looks like in the database
-var addressSchema = new mongoose.Schema({
-	name: String,
-	street: String,
-	city: String,
-	state: String,
-	zipcode: Number
-});
+const savedContacts = require('./contacts')
 
 var userSchema = new mongoose.Schema({
 	name: String,
@@ -22,7 +14,7 @@ var userSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	savedContacts: [addressSchema]
+	savedContacts: [savedContacts.schema]
 });
 
 // Make a function that checks whether the password is correct

@@ -6,12 +6,7 @@ var addressSchema = new Schema({
   street: String,
   city: String,
   state: String,
-  zipcode: Number
-  userId: {
-  	type: Schema.Types.ObjectId,
-  	ref: 'User',
-  	required: true
-  }
+  zipcode: Number,
 });
 
 var Contacts = mongoose.model('Contacts', addressSchema);
