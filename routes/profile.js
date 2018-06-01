@@ -16,7 +16,7 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
 
 profileRoute.get('/addressbook', function (req, res) {
     res.render('addressBook')
-
+});
 
 profileRoute.get('/createcard', isLoggedIn, function(req, res){
     res.render('createcard')
@@ -42,7 +42,6 @@ profileRoute.post('/', function (req, res) {
     });
     res.send('success')
 })
-//////////////////////////////////////////////////////
 
 profileRoute.delete('/', function (req, res) {
     db.findById(res.locals.currentUser.id, (err, user) => {
