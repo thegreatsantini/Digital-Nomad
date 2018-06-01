@@ -10,8 +10,12 @@ const db = require('../models/user');
 
 profileRoute.get('/', isLoggedIn, function (req, res) {
     // console.log(res.locals.currentUser)
-    res.render('profile', { currentUser: res.locals.currentUser });
+    res.render('profile');
 });
+
+profileRoute.get('/addressbook', function (req, res) {
+    res.render('addressBook')
+})
 
 profileRoute.post('/', function (req, res) {
 
