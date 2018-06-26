@@ -1,6 +1,7 @@
 // Modules I need for running this app
 require('dotenv').config(); // Loads the .env
 var bodyParser = require('body-parser');
+const morgan = require('morgan');
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var flash = require('connect-flash');
@@ -8,7 +9,7 @@ var isLoggedIn = require('./middleware/isLoggedIn');
 var mongoose = require('mongoose');
 var passport = require('./config/passportConfig');
 var session = require('express-session');
-const indeRoute = require('./routes/index');
+const indexRoute = require('./routes/index');
 const profileRoute = require('./routes/profile');
 
 
@@ -32,6 +33,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'));
+app.use(morgan('tiny'))
 
 // Just a convenience, but makes life easier...
 
@@ -43,18 +45,10 @@ app.use(function(req, res, next) {
 
 
 // Top-level Routes
-app.get('/', function(req, res){
-	res.render('home');
-});
-
-app.get('/profile', isLoggedIn, function(req, res) {
-	res.render('profile');
-});
-
-// Include any routes from controllers
+app.use('/', indexRoute);
+app.use('/profile', profileRoute);
 app.use('/auth', require('./routes/auth'));
-app.use('/profile', require('./routes/profile'));
-// app.use('/user', require('./routes/user'))
+
 
 // Listen
 
