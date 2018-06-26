@@ -43,9 +43,9 @@ h3 {
 .nav_container {
 	display: flex;
 }
-/* #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
+#logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
 	background-color: #CBBEB5!important;
-
+}
 #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
 	background-color: #b0e0e6!important;
 
@@ -60,6 +60,7 @@ h3 {
 	text-align: center;
 	font-weight: bold;
 }
+
 #postcard, #addressbook {
 	background-color: #b0e0e6!important;
 	text-align: center;
@@ -69,4 +70,4 @@ h3 {
 	color: white!important;
 	border-radius: 5px;
 
-} */
+}
