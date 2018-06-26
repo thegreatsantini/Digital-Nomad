@@ -7,7 +7,7 @@ var router = express.Router();
 var User = require('../models/user');
 
 // Render the page with the login form
-router.get('/login', function(req, res) {
+router.get('/login', function (req, res) {
 	res.render('auth/login');
 });
 
@@ -20,48 +20,42 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 // Render the page with the sign up form
-router.get('/signup', function(req, res) {
+router.get('/signup', function (req, res) {
 	res.render('auth/signup');
 });
 
 // Perform the signup functionality
-router.post('/signup', function(req, res, next) {
-	console.log('info from form', req.body);
-
-
+router.post('/signup', function (req, res, next) {
 	//First, try to find their email (in case it already exists)
-	User.findOne({email: req.body.email}, function(err, user) {
-		if(err){
+	User.findOne({ email: req.body.email }, function (err, user) {
+		if (err) {
 			console.log('bummer, what happened?', err);
 			req.flash('error', 'Something went wrong! I dunno why. Check the logs!');
 			res.redirect('/auth/signup');
 		}
-		else if(user) {
+		else if (user) {
 			// Don't want to let them sign up multiple times with same email
 			req.flash('error', 'You already exist');
 			res.redirect('/auth/login');
 		}
 		else {
-			User.create(req.body, function(err, createdUser) {
-				if(err) {
+			User.create(req.body, function (err, createdUser) {
+				if (err) {
 					req.flash('error', 'noooooo whyyyyyyy');
 					return console.log('err', err);
 				}
-				console.log('yay, signed up, now let us log in!');
 				passport.authenticate('local', {
 					successRedirect: '/profile',
 					successFlash: 'Successful account creation'
 				})(req, res, next);
 			});
-
 		}
-
 	});
 });
 
 // Logout route removes user data from session
 // Then it redirects to the home page
-router.get('/logout', function(req, res) {
+router.get('/logout', function (req, res) {
 	req.logout();
 	req.flash('success', 'You are logged out. Bye-bye now');
 	res.redirect('/');
