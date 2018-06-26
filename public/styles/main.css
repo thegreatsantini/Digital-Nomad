@@ -39,7 +39,11 @@ h3 {
 	background-color: #CBBEB5;
 	color: white;
 }
-#logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
+
+.nav_container {
+	display: flex;
+}
+/* #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
 	background-color: #CBBEB5!important;
 	color: white;
 	font-family: 'Bowlby One SC', cursive;
@@ -62,4 +66,4 @@ h3 {
 	color: white!important;
 	border-radius: 5px;
 
-}
+} */
