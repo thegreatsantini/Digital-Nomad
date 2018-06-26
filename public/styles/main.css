@@ -25,7 +25,7 @@ h3 {
 	position: fixed;
 	overflow: hidden;
 	float: left;
-	bottom: 200px;
+	bottom: 50px;
 }
 .footer {
 	bottom: 0;
@@ -45,6 +45,10 @@ h3 {
 }
 /* #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
 	background-color: #CBBEB5!important;
+
+#logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
+	background-color: #b0e0e6!important;
+
 	color: white;
 	font-family: 'Bowlby One SC', cursive;
 	font-family: 'Roboto Slab', serif;
@@ -56,12 +60,11 @@ h3 {
 	text-align: center;
 	font-weight: bold;
 }
-#createcard, #addressbook {
-	font-family: 'Bowlby One SC', cursive;
-	font-family: 'Roboto Slab', serif;
+#postcard, #addressbook {
+	background-color: #b0e0e6!important;
 	text-align: center;
-	padding: 10px;
 	display: block;
+
 	background-color: #b0e0e6;
 	color: white!important;
 	border-radius: 5px;
