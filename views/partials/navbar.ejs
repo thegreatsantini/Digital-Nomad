@@ -1,17 +1,54 @@
-<br>
-<br>
-<br>
-<div class = "nav-center">
-	<div class = "row">
-		<div class = "col s12">
-			<a href = "/" class = "btn btn-info" id = "homeButton">Home</a>
+<!-- <div class="nav__container">
+	<div class="flex__container">
+		<ul>
+			<li>
+				<a href="/" class="" id="homeButton">Home</a>
+			</li>
 			<% if(!currentUser) {%>
-			<a href = "/auth/login" class = "btn btn-primary" id = "logInButton">Login</a>
-			<a href = "/auth/signup" class = "btn btn-success" id = "signUpButton">Sign Up</a>
-			<% } else { %>
-			<a href = "/auth/logout" class = "btn btn-warning" id = "logOutButton"><%=currentUser.name%>, Do you wanna log out?</a>
-			<a href = "/profile" class = "btn btn-danger" id = "profileButton">Profile</a>
+				<li>
+					<a href="/auth/login" class="" id="logInButton">Login</a>
+				</li>
+				<li>
+					<a href="/auth/signup" class="" id="signUpButton">Sign Up</a>
+				</li>
+				<% } else { %>
+					<li>
+						<a href="/auth/logout" class="" id="logOutButton">log out</a>
+					</li>
+					<li>
+						<a href="/profile" class="" id="profileButton">Profile</a>
+					</li>
+					<% } %>
+		</ul>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<a href="/" class="btn btn-info" id="homeButton">Home</a>
+			<% if(!currentUser) {%>
+				<a href="/auth/login" class="btn btn-primary" id="logInButton">Login</a>
+				<a href="/auth/signup" class="btn btn-success" id="signUpButton">Sign Up</a>
+					<% } else { %>
+				<a href="/auth/logout" class="btn btn-warning" id="logOutButton">log out</a>
+				<a href="/profile" class="btn btn-danger" id="profileButton">Profile</a>
 			<% } %>
+		</div>
+	</div> 
+</div> -->
+<div id="header">
+	<div id="container">
+		<div id="logo">
+			Brand
+		</div>
+		<div id="header-button">
+			<svg id="header-menu-svg" height="50" width="25" viewBox="0 0 12 16" version="1.1" aria-hidden="true">
+				<path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path>
+			</svg>
+		</div>
+		<div id="nav">
+			<a class="active" href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Application</a>
+			<a href="#">Contact Us</a>
 		</div>
 	</div>
 </div>

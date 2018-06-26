@@ -39,8 +39,16 @@ h3 {
 	background-color: #CBBEB5;
 	color: white;
 }
+
+.nav_container {
+	display: flex;
+}
+/* #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
+	background-color: #CBBEB5!important;
+
 #logInButton, #profileButton, #signUpButton, #logOutButton, #homeButton, #logMeInButton, #signupbutton {
 	background-color: #b0e0e6!important;
+
 	color: white;
 	font-family: 'Bowlby One SC', cursive;
 	font-family: 'Roboto Slab', serif;
@@ -56,9 +64,9 @@ h3 {
 	background-color: #b0e0e6!important;
 	text-align: center;
 	display: block;
-}
-.btn {
-	background-color:#b0e0e6!important ;
-	font-family: 'Bowlby One SC', cursive;
-	font-family: 'Roboto Slab', serif;
-}
+
+	background-color: #b0e0e6;
+	color: white!important;
+	border-radius: 5px;
+
+} */
