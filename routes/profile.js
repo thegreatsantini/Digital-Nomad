@@ -14,29 +14,28 @@ profileRoute.get('/', isLoggedIn, function (req, res) {
 });
 
 profileRoute.get('/addressbook', isLoggedIn, function (req, res) {
-    res.render('addressBook')
+    res.render('addressBook', {currentUser : res.locals.currentUser})
 });
 
 profileRoute.post('/addressbook', function(req, res, next){
     db.findById(res.locals.currentUser.id, (err, success) => {
         // Check for repeats
-        contacts.find({ title: req.body.title }, (fail, item) => {
-            // if the item already exits
-            if (item.length > 0 ) {
-                return res.send('recipes already exits')
-            }
+        // contacts.find({ title: req.body.title }, (fail, item) => {
+        //     // if the item already exits
+        //     if (item.length > 0 ) {
+        //         return res.send('recipes already exits')
+        //     }
 
             contacts.create(req.body, (error, contact) => {
                 if (error) {
                     return res.status(500).send()
                 }
                 success.savedContacts.push(contact);
-                console.log(success)
                 success.save().then(() => {
-                    return res.send('success')
+                    return res.redirect('/profile/addressbook')
                 });
             })
-        })
+        // })
     });
 })
 
