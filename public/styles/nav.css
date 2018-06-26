@@ -38,6 +38,10 @@ body {
     cursor: default;
 }
 
+.logo:visited {
+    color: white;
+}
+
 #logo:hover {
     color: lightblue;
 }
